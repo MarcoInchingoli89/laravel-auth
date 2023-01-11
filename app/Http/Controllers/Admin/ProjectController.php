@@ -76,7 +76,9 @@ class ProjectController extends Controller
      */
     public function update(UpdateProjectRequest $request, Project $project)
     {
-        //
+        $val_data = $request->validated();
+        $project->update($val_data);
+        return to_route('admin.projects.index');
     }
 
     /**
