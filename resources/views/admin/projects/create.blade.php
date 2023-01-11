@@ -1,6 +1,7 @@
 @extends('layouts.admin')
 
 @section('content')
+    @include('partials.errors')
     <form action="{{ route('admin.projects.store') }}" method="post">
         @csrf
         <div class="mb-3">

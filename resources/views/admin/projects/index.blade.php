@@ -7,6 +7,7 @@
 @endsection
 @section('content')
     <div class="p-5">
+        @include('partials.message')
         <div class="table-responsive">
             <table class="table table-striped
     table-hover	
