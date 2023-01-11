@@ -34,7 +34,8 @@
                                     href="{{ route('admin.projects.show', $project->id) }}"><i
                                         class="fa-solid fa-eye"></i></a>
                                 <a class="d-flex text-white p-2 my-2 bg-secondary justify-content-center rounded-2"
-                                    href=""><i class="fa-solid fa-pen-to-square"></i></a>
+                                    href="{{ route('admin.projects.edit', $project->id) }}"><i
+                                        class="fa-solid fa-pen-to-square"></i></a>
                                 <a class="d-flex text-white p-2 my-2 bg-danger justify-content-center rounded-2"
                                     href=""><i class="fa-solid fa-trash"></i></a>
                             </td>
