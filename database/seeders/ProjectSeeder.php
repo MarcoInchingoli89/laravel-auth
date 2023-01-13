@@ -20,7 +20,7 @@ class ProjectSeeder extends Seeder
         for ($i = 0; $i < 10; $i++) {
             $project = new Project();
             $project->title = $faker->sentence();
-            $project->cover_image = 'placeholders/' . $faker->image('storage/app/public/placeholders', 600, 300, $project, false, false);
+            $project->cover_image = 'placeholders/placeholder-project.png';
             $project->description = $faker->text();
             $project->save();
         }

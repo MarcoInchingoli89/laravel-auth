@@ -6,6 +6,7 @@ use App\Models\Project;
 use App\Http\Controllers\Controller;
 use App\Http\Requests\StoreProjectRequest;
 use App\Http\Requests\UpdateProjectRequest;
+use Illuminate\Support\Facades\Storage;
 
 class ProjectController extends Controller
 {
@@ -40,6 +41,12 @@ class ProjectController extends Controller
     {
         /* dd($request); */
         $val_data = $request->validated();
+
+        if ($request->hasFile('cover_image')) {
+            $cover_image = Storage::put('uploads', $val_data['cover_image']);
+            $val_data['cover_image'] = $cover_image;
+        }
+
 
         $project = Project::create($val_data);
         return to_route('admin.projects.index')->with('message', "$project->title added succesfully!");
