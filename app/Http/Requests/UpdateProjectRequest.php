@@ -31,6 +31,7 @@ class UpdateProjectRequest extends FormRequest
                 'min:10',
                 'max:100'
             ],
+            'cover_image' => 'nullable|image|max:300',
             'description' => 'nullable'
         ];
     }
@@ -40,7 +41,8 @@ class UpdateProjectRequest extends FormRequest
         return [
             'title.required' => 'Il titolo è obbligatorio',
             'title.min' => 'Il titolo deve essere almeno :min caratteri',
-            'title.max' => 'Il titolo può essere al massimo :max caratteri'
+            'title.max' => 'Il titolo può essere al massimo :max caratteri',
+            'cover_image.max' => 'L`immagine può essere grande al massimo :max kb'
         ];
     }
 }
