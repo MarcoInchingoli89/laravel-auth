@@ -87,7 +87,10 @@ class ProjectController extends Controller
 
         if ($request->hasFile('cover_image')) {
             if ($project->cover_image) {
-                Storage::delete($project->cover_image);
+                $path = Storage::path($project->cover_image);
+                if (strpos($path, 'placeholders') !== true) {
+                    Storage::delete($project->cover_image);
+                }
             }
 
             $cover_image = Storage::put('uploads', $val_data['cover_image']);
